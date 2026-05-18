@@ -53,13 +53,17 @@ class Jugador {
     -string nombre
     -int puntaje_total
     -int performance_points
+    -vector<Standard> partidas_std
+    -vector<Mania> partidas_mania
+    -vector<Taiko> partidas_taiko
+    -vector<Catch> partidas_catch
     
     +Jugador()
     +mostrar_stats()
 }
 
 
-Standard --o Jugador
-Mania --o Jugador
-Taiko --o Jugador
-Catch --o Jugador
+Standard "0...N" --o "1" Jugador
+Mania "0...N" --o "1" Jugador
+Taiko "0...N" --o "1" Jugador
+Catch "0...N" --o "1" Jugador
