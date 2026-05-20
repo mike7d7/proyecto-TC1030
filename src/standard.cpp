@@ -3,13 +3,7 @@
 #include <ostream>
 #include <sstream>
 
-void Standard::set_num_sliders(int num) { num_sliders = num; }
-
-int Standard::get_num_sliders() { return num_sliders; }
-
 void Standard::jugar() {
-  // num_notas = 404;
-  // num_sliders = 129;
   // great = 529;
   // ok = 3;
   // meh = 0;
@@ -23,8 +17,6 @@ void Standard::jugar() {
   // max_combo = 366;
 
   // R U 4 Me - myself
-  num_notas = 118;
-  num_sliders = 170;
   great = 251;
   ok = 34;
   meh = 0;
@@ -33,13 +25,13 @@ void Standard::jugar() {
   star_rating = 7.1;
 
   // Image material - Jesse Pinkman
-  // num_notas = 1861;
-  // num_sliders = 417;
   // great = 2270;
   // ok = 8;
   // meh = 0;
   // miss = 0;
   // max_combo = 2900;
+
+  num_notas = great + ok + meh + miss;
 
   calc_accuracy();
 
@@ -48,10 +40,9 @@ void Standard::jugar() {
 }
 
 int Standard::calc_puntuacion() {
-  int max = (num_notas + num_sliders) * 300;
+  int max = num_notas * 300;
   double current = (great * 300) + (ok * 100) + (meh * 50);
-  double weighted =
-      current * 5.5 * ((double)max_combo / (num_notas + num_sliders));
+  double weighted = current * 5.5 * ((double)max_combo / num_notas);
   double max_score = max * 6.85;
   int punt = weighted / max_score * 1000000 - std::pow(weighted / 10000, 2);
   // uint32_t punt = weighted / max_score * 1000000 - std::exp(weighted /
@@ -63,8 +54,7 @@ int Standard::calc_performance() {
   // use accuracy as exponent
   int perf = 25 * std::pow(star_rating - 1.8, 2) *
              std::pow(accuracy / 0.98, 6) *
-             std::pow(max_combo / (num_notas + num_sliders), 0.8) *
-             std::pow(0.97, miss);
+             std::pow(max_combo / num_notas, 0.8) * std::pow(0.97, miss);
   return perf;
 };
 
@@ -72,7 +62,7 @@ void Standard::calc_accuracy() {
   double total = 0.0;
   // https://osu.ppy.sh/wiki/en/Gameplay/Judgement/osu%21
   total += (great * 100) + (ok * 33.33) + (meh * 16.67);
-  accuracy = total / ((num_notas + num_sliders) * 100);
+  accuracy = total / (num_notas * 100);
 }
 
 std::stringstream Standard::mostrar_resultados() {
