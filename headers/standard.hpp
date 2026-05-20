@@ -9,7 +9,7 @@ private:
   int num_sliders;
   int calc_puntuacion() override;
   int calc_performance() override;
-  void calc_accuracy();
+  void calc_accuracy() override;
 
 public:
   void set_num_sliders(int);
