@@ -27,7 +27,7 @@ class Standard {
     +mostrar_resultados() string
     -calc_puntuacion() int
     -calc_performance() int
-    -calc_accuracy() int
+    -calc_accuracy() void
 }
 
 class Mania {
