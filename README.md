@@ -13,3 +13,6 @@ También permite calcular los puntos de rendimiento totales de un jugador en bas
 
 ## Diagrama de Clases
 ![](diagrama-uml.png)
+
+## Casos de fallos
+El programa utiliza dos tipos de entradas distintos, uno recibe cadenas de caracteres, otro recibe números enteros. Si se ingresa un tipo de dato diferente al especificado (ej. se ingresa un texto en lugar de un número entero) no se garantiza que el programa funcione correctamente.
