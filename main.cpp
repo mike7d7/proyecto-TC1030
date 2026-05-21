@@ -1,5 +1,6 @@
 #include "headers/mania.hpp"
 #include "headers/standard.hpp"
+#include "headers/taiko.hpp"
 #include <iostream>
 #include <sstream>
 
@@ -15,4 +16,9 @@ int main() {
   mania_test.jugar();
   std::stringstream ss2 = mania_test.mostrar_resultados();
   std::cout << ss2.str() << std::endl;
+
+  Taiko taiko_test;
+  taiko_test.jugar();
+  std::stringstream ss3 = taiko_test.mostrar_resultados();
+  std::cout << ss3.str() << std::endl;
 }

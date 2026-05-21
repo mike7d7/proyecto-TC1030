@@ -36,7 +36,7 @@
               gcc
             ];
             buildPhase = ''
-              g++ -std=c++11 main.cpp "src/standard.cpp" "src/mania.cpp" -o osu-sim
+              g++ -std=c++11 main.cpp "src/standard.cpp" "src/mania.cpp" "src/taiko.cpp" -o osu-sim
             '';
             installPhase = ''
               mkdir -p $out/bin
