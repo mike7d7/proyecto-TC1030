@@ -5,7 +5,6 @@
 
 class Mania : public Partida {
 private:
-  int num_hold_notes;
   int num_teclas;
   int perfect;
   int good;
@@ -15,9 +14,7 @@ private:
   void calc_accuracy() override;
 
 public:
-  int get_num_hold_notes();
   int get_num_teclas();
-  void set_num_hold_notes(int);
   void set_num_teclas(int);
 
   void jugar() override;
