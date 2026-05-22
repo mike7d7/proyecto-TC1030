@@ -16,3 +16,18 @@ También permite calcular los puntos de rendimiento totales de un jugador en bas
 
 ## Casos de fallos
 El programa utiliza dos tipos de entradas distintos, uno recibe cadenas de caracteres, otro recibe números enteros. Si se ingresa un tipo de dato diferente al especificado (ej. se ingresa un texto en lugar de un número entero) no se garantiza que el programa funcione correctamente.
+
+## Compilación e instalación
+### Linux
+
+Compilación:
+`g++ -std=c++11 main.cpp "src/standard.cpp" "src/mania.cpp" "src/taiko.cpp" -o osu-sim`
+
+Ejecución: `./osu-sim`
+
+### Windows
+
+Compilación:
+`g++ -std=c++11 main.cpp "src/standard.cpp" "src/mania.cpp" "src/taiko.cpp" -o osu-sim`
+
+Ejecución: `.\osu-sim.exe`
