@@ -19,6 +19,11 @@ public:
 
   void jugar() override;
   std::stringstream mostrar_resultados() override;
+  Mania() : Partida("", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) {};
+  Mania(std::string bm, double star, int great, int ok, int meh, int miss,
+        int max_combo, int num_teclas, int perfect, int good)
+      : Partida(bm, star, great, ok, meh, miss, max_combo, 0, 0, 0, 0),
+        num_teclas(num_teclas), perfect(perfect), good(good) {};
 };
 
 #endif

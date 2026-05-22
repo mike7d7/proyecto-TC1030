@@ -13,7 +13,13 @@ int main() {
   std::stringstream ss = play1.mostrar_resultados();
   std::cout << ss.str() << std::endl;
 
-  Mania mania_test;
+  // https://osu.ppy.sh/scores/2287924022
+  Mania mania_test("Galaxy Collapse - DellyK", 8.66, 2666, 89, 10, 84, 2700, 7,
+                   5907, 438);
+  // https://osu.ppy.sh/scores/6169855412
+  // Mania mania_test("DEUX EX MAXHINA - Gaboelmascapo27", 6.42, 867, 37, 11,
+  // 39,
+  //                  291, 4, 1714, 159);
   mania_test.jugar();
   std::stringstream ss2 = mania_test.mostrar_resultados();
   std::cout << ss2.str() << std::endl;
