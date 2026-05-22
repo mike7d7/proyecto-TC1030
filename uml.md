@@ -19,6 +19,7 @@ class Partida {
     #calc_accuracy()* void virtual
     +jugar()* virtual
     +mostrar_resultados()* string virtual
+    +get_performance_points() int
 }
 
 class Standard {
@@ -49,24 +50,19 @@ class Taiko {
     -calc_performance() int
     -calc_accuracy() double
 }
-
-Partida <|-- Standard
-Partida <|-- Mania
-Partida <|-- Taiko
+Partida "0...N" --o "1" Jugador
 
 class Jugador {
     -string nombre
     -int puntaje_total
     -int performance_points
-    -vector~Standard~ partidas_std
-    -vector~Mania~ partidas_mania
-    -vector~Taiko~ partidas_taiko
-    
+    -vector~Partida~ partidas
+    -calc_performance_point() int
+
     +Jugador()
-    +mostrar_stats()
+    +mostrar_stats() string
 }
 
-
-Standard "0...N" --o "1" Jugador
-Mania "0...N" --o "1" Jugador
-Taiko "0...N" --o "1" Jugador
+Partida <|-- Standard
+Partida <|-- Mania
+Partida <|-- Taiko
