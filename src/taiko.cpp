@@ -7,21 +7,8 @@ double Taiko::calc_accuracy() {
 }
 
 void Taiko::jugar() {
-  // https://osu.ppy.sh/scores/6726256610
-  great = 1597;
-  ok = 68;
-  miss = 1;
-  max_combo = 1373;
-  star_rating = 4.89;
-
-  // https://osu.ppy.sh/scores/6683345404
-  // great = 1180;
-  // ok = 30;
-  // miss = 8;
-  // max_combo = 1057;
-  // star_rating = 6.4;
-
   num_notas = great + ok + miss;
+
   accuracy = calc_accuracy();
   puntuacion = calc_puntuacion();
   performance_points = calc_performance();
