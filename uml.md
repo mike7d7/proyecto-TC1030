@@ -1,4 +1,3 @@
-%%{ init : { "theme" : "default" }}%%
 classDiagram
     note "Partida es clase abstracta"
 class Partida {
@@ -27,7 +26,7 @@ class Standard {
     +mostrar_resultados() string
     -calc_puntuacion() int
     -calc_performance() int
-    -calc_accuracy() void
+    -calc_accuracy() double
 }
 
 class Mania {
@@ -39,27 +38,21 @@ class Mania {
     +mostrar_resultados() string
     -calc_puntuacion() int
     -calc_performance() int
-    -calc_accuracy() void
+    -calc_accuracy() double
 
 }
 
 class Taiko {
-    -double scroll_speed
     +jugar()
+    +mostrar_resultados() string
     -calc_puntuacion() int
     -calc_performance() int
+    -calc_accuracy() double
 }
 
-class Catch {
-    -int num_streams
-    +jugar()
-    -calc_puntuacion() int
-    -calc_performance() int
-}
 Partida <|-- Standard
 Partida <|-- Mania
 Partida <|-- Taiko
-Partida <|-- Catch
 
 class Jugador {
     -string nombre
@@ -68,7 +61,6 @@ class Jugador {
     -vector~Standard~ partidas_std
     -vector~Mania~ partidas_mania
     -vector~Taiko~ partidas_taiko
-    -vector~Catch~ partidas_catch
     
     +Jugador()
     +mostrar_stats()
@@ -78,4 +70,3 @@ class Jugador {
 Standard "0...N" --o "1" Jugador
 Mania "0...N" --o "1" Jugador
 Taiko "0...N" --o "1" Jugador
-Catch "0...N" --o "1" Jugador
