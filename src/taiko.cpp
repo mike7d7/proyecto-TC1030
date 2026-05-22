@@ -28,6 +28,8 @@ int Taiko::calc_performance() {
 
 std::stringstream Taiko::mostrar_resultados() {
   std::stringstream ss;
+  ss << "█████ " << beatmap << " █████" << std::endl;
+  ss << "Modo: Taiko" << std::endl;
   ss << "Número de notas: " << num_notas << std::endl;
   ss << "Accuracy: " << accuracy << std::endl;
   ss << "Puntuación: " << puntuacion << std::endl;
