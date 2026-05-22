@@ -15,28 +15,6 @@ double Mania::calc_accuracy() {
   return acc;
 }
 void Mania::jugar() {
-  // https://osu.ppy.sh/scores/2287924022
-  // perfect = 5907;
-  // great = 2666;
-  // good = 438;
-  // ok = 89;
-  // meh = 10;
-  // miss = 84;
-  // max_combo = 2700;
-  // star_rating = 8.66;
-  // num_teclas = 7;
-
-  // https://osu.ppy.sh/scores/6169855412
-  perfect = 1714;
-  great = 867;
-  good = 159;
-  ok = 37;
-  meh = 11;
-  miss = 39;
-  max_combo = 291;
-  star_rating = 6.42;
-  num_teclas = 4;
-
   num_notas = perfect + great + good + ok + meh + miss;
 
   accuracy = calc_accuracy();
