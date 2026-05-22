@@ -33,6 +33,7 @@ public:
   virtual ~Partida() = default;
   virtual void jugar() = 0;
   virtual std::stringstream mostrar_resultados() = 0;
+  int get_performance_points();
 };
 
 #endif
