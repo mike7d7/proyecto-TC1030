@@ -37,6 +37,8 @@ double Standard::calc_accuracy() {
 
 std::stringstream Standard::mostrar_resultados() {
   std::stringstream ss;
+  ss << "█████ " << beatmap << " █████" << std::endl;
+  ss << "Modo: Standard" << std::endl;
   ss << "Número de notas: " << num_notas << std::endl;
   ss << "Accuracy: " << accuracy << std::endl;
   ss << "Puntuación: " << puntuacion << std::endl;
