@@ -1,7 +1,10 @@
 #include "../headers/taiko.hpp"
 #include <cmath>
 
-void Taiko::calc_accuracy() { accuracy = (great + 0.5 * ok) / num_notas; }
+double Taiko::calc_accuracy() {
+  double acc = (great + 0.5 * ok) / num_notas;
+  return acc;
+}
 
 void Taiko::jugar() {
   // https://osu.ppy.sh/scores/6726256610
@@ -19,7 +22,7 @@ void Taiko::jugar() {
   // star_rating = 6.4;
 
   num_notas = great + ok + miss;
-  calc_accuracy();
+  accuracy = calc_accuracy();
   puntuacion = calc_puntuacion();
   performance_points = calc_performance();
 };

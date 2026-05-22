@@ -6,12 +6,13 @@
 int Mania::get_num_teclas() { return num_teclas; }
 void Mania::set_num_teclas(int num) { num_teclas = num; }
 
-void Mania::calc_accuracy() {
+double Mania::calc_accuracy() {
   // https://osu.ppy.sh/wiki/en/Gameplay/Accuracy#osu%21mania (v2)
   int perfect_score = 305 * num_notas;
   int real =
       305 * perfect + 300 * great + (200 * good) + (100 * ok) + (50 * meh);
-  accuracy = (double)real / perfect_score;
+  double acc = (double)real / perfect_score;
+  return acc;
 }
 void Mania::jugar() {
   // https://osu.ppy.sh/scores/2287924022
@@ -38,7 +39,7 @@ void Mania::jugar() {
 
   num_notas = perfect + great + good + ok + meh + miss;
 
-  calc_accuracy();
+  accuracy = calc_accuracy();
   puntuacion = calc_puntuacion();
   performance_points = calc_performance();
 };

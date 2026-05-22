@@ -8,7 +8,7 @@ class Standard : public Partida {
 private:
   int calc_puntuacion() override;
   int calc_performance() override;
-  void calc_accuracy() override;
+  double calc_accuracy() override;
 
 public:
   void jugar() override;

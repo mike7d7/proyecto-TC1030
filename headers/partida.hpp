@@ -21,7 +21,7 @@ protected:
 
   virtual int calc_puntuacion() = 0;
   virtual int calc_performance() = 0;
-  virtual void calc_accuracy() = 0;
+  virtual double calc_accuracy() = 0;
 
 public:
   Partida() = default;

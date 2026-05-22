@@ -33,8 +33,7 @@ void Standard::jugar() {
 
   num_notas = great + ok + meh + miss;
 
-  calc_accuracy();
-
+  accuracy = calc_accuracy();
   puntuacion = calc_puntuacion();
   performance_points = calc_performance();
 }
@@ -58,11 +57,12 @@ int Standard::calc_performance() {
   return perf;
 };
 
-void Standard::calc_accuracy() {
+double Standard::calc_accuracy() {
   double total = 0.0;
   // https://osu.ppy.sh/wiki/en/Gameplay/Judgement/osu%21
   total += (great * 100) + (ok * 33.33) + (meh * 16.67);
-  accuracy = total / (num_notas * 100);
+  double acc = total / (num_notas * 100);
+  return acc;
 }
 
 std::stringstream Standard::mostrar_resultados() {
