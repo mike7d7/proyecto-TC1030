@@ -24,7 +24,10 @@ int main() {
   std::stringstream ss2 = mania_test.mostrar_resultados();
   std::cout << ss2.str() << std::endl;
 
-  Taiko taiko_test;
+  // https://osu.ppy.sh/scores/6726256610
+  // Taiko taiko_test("River of Oblivion - EnigmaticG", 4.89, 1597, 68, 1,
+  // 1373); https://osu.ppy.sh/scores/6683345404
+  Taiko taiko_test("River of Oblivion - EnigmaticG", 6.4, 1180, 30, 8, 1057);
   taiko_test.jugar();
   std::stringstream ss3 = taiko_test.mostrar_resultados();
   std::cout << ss3.str() << std::endl;
