@@ -38,7 +38,10 @@ int Mania::calc_performance() {
 
 std::stringstream Mania::mostrar_resultados() {
   std::stringstream ss;
+  ss << "█████ " << beatmap << " █████" << std::endl;
+  ss << "Modo: Mania" << std::endl;
   ss << "Número de notas: " << num_notas << std::endl;
+  ss << "Número de teclas: " << num_teclas << "K" << std::endl;
   ss << "Accuracy: " << accuracy << std::endl;
   ss << "Puntuación: " << puntuacion << std::endl;
   ss << "Puntos de rendimiento: " << performance_points << std::endl;
