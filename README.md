@@ -33,3 +33,10 @@ Compilación:
 `g++ -std=c++11 main.cpp "src/standard.cpp" "src/mania.cpp" "src/taiko.cpp" "src/jugador.cpp" "src/partida.cpp" -o osu-sim`
 
 Ejecución: `.\osu-sim.exe`
+
+## Estilo del Código
+Para el código se utiliza el formateador [ClangFormat](https://clang.llvm.org/docs/ClangFormat.html). Se utiliza la configuración por defecto de ClangFormat versión 21.1.8.
+
+Para los comentarios, solo se incluyen cuando el código no se pueda entender de forma inmediata. Funcionamiento de getters y setters es prácticamente universal, por lo tanto solo se comentan si hacen algo aparte de solo regresar o asignar el valor correspondiente.
+
+Se utiliza `override` en las clases hijas cuando se va a redefinir una función para que el compilador muestre errores en caso de que se haga de una forma que resultaría en un error a la hora de la ejecución.
