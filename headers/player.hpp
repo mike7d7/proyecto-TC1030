@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 
-class Jugador {
+class Player {
 private:
   std::string name;
   int total_score;
@@ -17,8 +17,8 @@ private:
   int calc_performance_point();
 
 public:
-  Jugador();
-  Jugador(std::string name, std::vector<Partida *> vec)
+  Player();
+  Player(std::string name, std::vector<Partida *> vec)
       : name(name), total_score(0), performance_points(0), plays(vec) {};
   std::stringstream show_stats();
 };

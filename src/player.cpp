@@ -1,8 +1,8 @@
-#include "../headers/jugador.hpp"
+#include "../headers/player.hpp"
 #include <ostream>
 #include <sstream>
 
-std::stringstream Jugador::show_stats() {
+std::stringstream Player::show_stats() {
   std::stringstream ss;
   ss << "Nombre: " << name << std::endl;
 
@@ -12,7 +12,7 @@ std::stringstream Jugador::show_stats() {
   return ss;
 }
 
-int Jugador::calc_performance_point() {
+int Player::calc_performance_point() {
   // Total pp = p * 0.95^(n-1)
   return 10;
 }

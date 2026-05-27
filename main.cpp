@@ -1,5 +1,5 @@
-#include "headers/jugador.hpp"
 #include "headers/mania.hpp"
+#include "headers/player.hpp"
 #include "headers/standard.hpp"
 #include "headers/taiko.hpp"
 #include <iostream>
@@ -42,7 +42,7 @@ int main() {
     std::cout << i->show_results().str() << std::endl;
   }
 
-  Jugador player("Test Player", partidas);
+  Player player("Test Player", partidas);
   std::stringstream stats = player.show_stats();
   std::cout << stats.str() << std::endl;
 }
