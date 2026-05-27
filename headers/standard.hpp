@@ -1,11 +1,11 @@
 #ifndef STANDARD_H
 #define STANDARD_H
 
-#include "partida.hpp"
+#include "gamematch.hpp"
 #include <sstream>
 #include <string>
 
-class Standard : public Partida {
+class Standard : public Gamematch {
 private:
   int calc_score() override;
   int calc_performance() override;
@@ -14,10 +14,10 @@ private:
 public:
   void play() override;
   std::stringstream show_results() override;
-  Standard() : Partida("", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) {};
+  Standard() : Gamematch("", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) {};
   Standard(std::string bm, double star, int great, int ok, int meh, int miss,
            int max_combo)
-      : Partida(bm, star, great, ok, meh, miss, max_combo, 0, 0, 0, 0) {};
+      : Gamematch(bm, star, great, ok, meh, miss, max_combo, 0, 0, 0, 0) {};
 };
 
 #endif

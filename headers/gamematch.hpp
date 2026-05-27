@@ -1,10 +1,10 @@
-#ifndef PARTIDA_H
-#define PARTIDA_H
+#ifndef GAMEMATCH_H
+#define GAMEMATCH_H
 
 #include <sstream>
 #include <string>
 
-class Partida {
+class Gamematch {
 protected:
   std::string beatmap;
   int score;
@@ -24,13 +24,13 @@ protected:
   virtual double calc_accuracy() = 0;
 
 public:
-  Partida() = default;
-  Partida(std::string bm, double star, int great, int ok, int meh, int miss,
-          int max_combo, int score, int perf, double acc, int num_notes)
+  Gamematch() = default;
+  Gamematch(std::string bm, double star, int great, int ok, int meh, int miss,
+            int max_combo, int score, int perf, double acc, int num_notes)
       : beatmap(bm), star_rating(star), great(great), ok(ok), meh(meh),
         miss(miss), max_combo(max_combo), score(score),
         performance_points(perf), accuracy(acc), num_notes(num_notes) {};
-  virtual ~Partida() = default;
+  virtual ~Gamematch() = default;
   virtual void play() = 0;
   virtual std::stringstream show_results() = 0;
   int get_performance_points();

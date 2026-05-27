@@ -1,9 +1,9 @@
 #ifndef TAIKO_H
 #define TAIKO_H
 
-#include "partida.hpp"
+#include "gamematch.hpp"
 
-class Taiko : public Partida {
+class Taiko : public Gamematch {
 private:
   int calc_score() override;
   int calc_performance() override;
@@ -12,9 +12,9 @@ private:
 public:
   void play() override;
   std::stringstream show_results() override;
-  Taiko() : Partida("", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) {};
+  Taiko() : Gamematch("", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) {};
   Taiko(std::string bm, double star, int great, int ok, int miss, int max_combo)
-      : Partida(bm, star, great, ok, 0, miss, max_combo, 0, 0, 0, 0) {};
+      : Gamematch(bm, star, great, ok, 0, miss, max_combo, 0, 0, 0, 0) {};
 };
 
 #endif

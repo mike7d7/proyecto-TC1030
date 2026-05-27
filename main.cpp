@@ -28,7 +28,7 @@ int main() {
   Taiko *taiko2 =
       new Taiko("River of Oblivion - EnigmaticG", 6.4, 1180, 30, 8, 1057);
 
-  std::vector<Partida *> partidas;
+  std::vector<Gamematch *> partidas;
 
   partidas.push_back(std1);
   partidas.push_back(std2);
