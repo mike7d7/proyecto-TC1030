@@ -2,12 +2,12 @@
 #include <ostream>
 #include <sstream>
 
-std::stringstream Jugador::mostrar_stats() {
+std::stringstream Jugador::show_stats() {
   std::stringstream ss;
-  ss << "Nombre: " << nombre << std::endl;
+  ss << "Nombre: " << name << std::endl;
 
-  puntaje_total = calc_performance_point();
-  ss << "Puntaje total: " << puntaje_total << std::endl;
+  total_score = calc_performance_point();
+  ss << "Puntaje total: " << total_score << std::endl;
 
   return ss;
 }

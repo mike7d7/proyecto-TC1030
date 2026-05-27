@@ -8,19 +8,19 @@
 
 class Jugador {
 private:
-  std::string nombre;
-  int puntaje_total;
+  std::string name;
+  int total_score;
   int performance_points;
 
-  std::vector<Partida *> partidas;
+  std::vector<Partida *> plays;
 
   int calc_performance_point();
 
 public:
   Jugador();
-  Jugador(std::string nom, std::vector<Partida *> vec)
-      : nombre(nom), puntaje_total(0), performance_points(0), partidas(vec) {};
-  std::stringstream mostrar_stats();
+  Jugador(std::string name, std::vector<Partida *> vec)
+      : name(name), total_score(0), performance_points(0), plays(vec) {};
+  std::stringstream show_stats();
 };
 
 #endif

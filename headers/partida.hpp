@@ -7,10 +7,10 @@
 class Partida {
 protected:
   std::string beatmap;
-  int puntuacion;
+  int score;
   int performance_points;
   double accuracy;
-  int num_notas;
+  int num_notes;
   double star_rating;
 
   int great;
@@ -19,20 +19,20 @@ protected:
   int miss;
   int max_combo;
 
-  virtual int calc_puntuacion() = 0;
+  virtual int calc_score() = 0;
   virtual int calc_performance() = 0;
   virtual double calc_accuracy() = 0;
 
 public:
   Partida() = default;
   Partida(std::string bm, double star, int great, int ok, int meh, int miss,
-          int max_combo, int punt, int perf, double acc, int num_notas)
+          int max_combo, int score, int perf, double acc, int num_notes)
       : beatmap(bm), star_rating(star), great(great), ok(ok), meh(meh),
-        miss(miss), max_combo(max_combo), puntuacion(punt),
-        performance_points(perf), accuracy(acc), num_notas(num_notas) {};
+        miss(miss), max_combo(max_combo), score(score),
+        performance_points(perf), accuracy(acc), num_notes(num_notes) {};
   virtual ~Partida() = default;
-  virtual void jugar() = 0;
-  virtual std::stringstream mostrar_resultados() = 0;
+  virtual void play() = 0;
+  virtual std::stringstream show_results() = 0;
   int get_performance_points();
 };
 

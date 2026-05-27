@@ -38,11 +38,11 @@ int main() {
   partidas.push_back(taiko2);
 
   for (auto i : partidas) {
-    i->jugar();
-    std::cout << i->mostrar_resultados().str() << std::endl;
+    i->play();
+    std::cout << i->show_results().str() << std::endl;
   }
 
   Jugador player("Test Player", partidas);
-  std::stringstream stats = player.mostrar_stats();
+  std::stringstream stats = player.show_stats();
   std::cout << stats.str() << std::endl;
 }
