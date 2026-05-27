@@ -1,11 +1,11 @@
 classDiagram
-    note "Partida es clase abstracta"
-class Partida {
+    note "Gamematch es clase abstracta"
+class Gamematch {
     #string beatmap
-    #int puntuacion
+    #int score
     #int performance_points
     #double accuracy
-    #int num_notas
+    #int num_notes
     #double star_rating
 
     #int great
@@ -14,55 +14,55 @@ class Partida {
     #int miss
     #int max_combo
 
-    #calc_puntuacion()* int virtual
+    #calc_score()* int virtual
     #calc_performance()* int virtual
     #calc_accuracy()* void virtual
-    +jugar()* virtual
-    +mostrar_resultados()* string virtual
+    +play()* virtual
+    +show_results()* string virtual
     +get_performance_points() int
 }
 
 class Standard {
-    +jugar()
-    +mostrar_resultados() string
-    -calc_puntuacion() int
+    +play()
+    +show_results() string
+    -calc_score() int
     -calc_performance() int
     -calc_accuracy() double
 }
 
 class Mania {
-    -int num_teclas
+    -int num_keys
     -int perfect
     -int good
 
-    +jugar()
-    +mostrar_resultados() string
-    -calc_puntuacion() int
+    +play()
+    +show_results() string
+    -calc_score() int
     -calc_performance() int
     -calc_accuracy() double
 
 }
 
 class Taiko {
-    +jugar()
-    +mostrar_resultados() string
-    -calc_puntuacion() int
+    +play()
+    +show_results() string
+    -calc_score() int
     -calc_performance() int
     -calc_accuracy() double
 }
-Partida "0...N" --o "1" Jugador
+Gamematch "0...N" --o "1" Player
 
-class Jugador {
-    -string nombre
-    -int puntaje_total
+class Player {
+    -string name
+    -int total_score
     -int performance_points
-    -vector~Partida~ partidas
+    -vector~Gamematch~ plays
     -calc_performance_point() int
 
-    +Jugador()
-    +mostrar_stats() string
+    +Player()
+    +show_stats() string
 }
 
-Partida <|-- Standard
-Partida <|-- Mania
-Partida <|-- Taiko
+Gamematch <|-- Standard
+Gamematch <|-- Mania
+Gamematch <|-- Taiko
