@@ -3,9 +3,6 @@
 #include "headers/standard.hpp"
 #include "headers/taiko.hpp"
 #include <iostream>
-#include <ostream>
-#include <sstream>
-#include <vector>
 
 int main() {
   // https://osu.ppy.sh/scores/4795773370

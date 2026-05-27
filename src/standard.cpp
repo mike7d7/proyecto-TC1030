@@ -1,7 +1,5 @@
 #include "../headers/standard.hpp"
 #include <cmath>
-#include <ostream>
-#include <sstream>
 
 void Standard::play() {
   num_notes = great + ok + meh + miss;

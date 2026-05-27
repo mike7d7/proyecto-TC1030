@@ -1,7 +1,5 @@
 #include "../headers/mania.hpp"
 #include <cmath>
-#include <iostream>
-#include <ostream>
 
 int Mania::get_num_keys() { return num_keys; }
 void Mania::set_num_keys(int num) { num_keys = num; }

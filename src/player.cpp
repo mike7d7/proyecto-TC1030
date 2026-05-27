@@ -1,6 +1,4 @@
 #include "../headers/player.hpp"
-#include <ostream>
-#include <sstream>
 
 std::stringstream Player::show_stats() {
   std::stringstream ss;

@@ -2,8 +2,6 @@
 #define PLAYER_H
 
 #include "gamematch.hpp"
-#include <sstream>
-#include <string>
 #include <vector>
 
 class Player {

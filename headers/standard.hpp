@@ -2,8 +2,6 @@
 #define STANDARD_H
 
 #include "gamematch.hpp"
-#include <sstream>
-#include <string>
 
 class Standard : public Gamematch {
 private:
