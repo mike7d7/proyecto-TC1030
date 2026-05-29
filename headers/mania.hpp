@@ -19,7 +19,9 @@ public:
 
   void play() override;
   std::stringstream show_results() override;
-  Mania() : Gamematch("", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) {};
+  Mania()
+      : Gamematch("", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), num_keys(0), perfect(0),
+        good(0) {};
   Mania(std::string bm, double star, int great, int ok, int meh, int miss,
         int max_combo, int num_keys, int perfect, int good)
       : Gamematch(bm, star, great, ok, meh, miss, max_combo, 0, 0, 0, 0),
