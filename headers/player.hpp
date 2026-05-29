@@ -16,9 +16,18 @@ private:
 
 public:
   Player();
-  Player(std::string name, std::vector<Gamematch *> vec)
-      : name(name), total_score(0), performance_points(0), plays(vec) {};
+  Player(std::string name)
+      : name(name), total_score(0), performance_points(0) {};
+
   std::stringstream show_stats();
+  std::stringstream show_plays();
+
+  void new_standard(std::string bm, double star, int great, int ok, int meh,
+                    int miss, int max_combo);
+  void new_mania(std::string bm, double star, int great, int ok, int meh,
+                 int miss, int max_combo, int num_keys, int perfect, int good);
+  void new_taiko(std::string bm, double star, int great, int ok, int miss,
+                 int max_combo);
 };
 
 #endif
