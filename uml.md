@@ -50,7 +50,7 @@ class Taiko {
     -calc_performance() int
     -calc_accuracy() double
 }
-Gamematch "0...N" --o "1" Player
+Gamematch "0...N" --* "1" Player
 
 class Player {
     -string name
@@ -61,6 +61,10 @@ class Player {
 
     +Player()
     +show_stats() string
+    +show_plays() string
+    +new_standard(string bm, double star, int great, int ok, int meh, int miss, int max_combo) void
+    +new_mania(string bm, double star, int great, int ok, int meh, int miss, int max_combo, int num_keys, int perfect, int good) void
+    +new_taiko(std::string bm, double star, int great, int ok, int miss, int max_combo) void
 }
 
 Gamematch <|-- Standard
