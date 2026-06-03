@@ -65,6 +65,7 @@ class Player {
     +new_standard(string bm, double star, int great, int ok, int meh, int miss, int max_combo) void
     +new_mania(string bm, double star, int great, int ok, int meh, int miss, int max_combo, int num_keys, int perfect, int good) void
     +new_taiko(std::string bm, double star, int great, int ok, int miss, int max_combo) void
+    +get_name() string
 }
 
 Gamematch <|-- Standard
