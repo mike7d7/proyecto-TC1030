@@ -3,6 +3,7 @@
 #include "../headers/standard.hpp"
 #include "../headers/taiko.hpp"
 #include <sstream>
+#include <string>
 
 std::stringstream Player::show_stats() {
   std::stringstream ss;
@@ -47,3 +48,5 @@ void Player::new_taiko(std::string bm, double star, int great, int ok, int miss,
   Gamematch *match = new Taiko(bm, star, great, ok, miss, max_combo);
   plays.push_back(match);
 };
+
+std::string Player::get_name() { return name; }

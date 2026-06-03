@@ -2,6 +2,7 @@
 #define PLAYER_H
 
 #include "gamematch.hpp"
+#include <string>
 #include <vector>
 
 class Player {
@@ -28,6 +29,7 @@ public:
                  int miss, int max_combo, int num_keys, int perfect, int good);
   void new_taiko(std::string bm, double star, int great, int ok, int miss,
                  int max_combo);
+  std::string get_name();
 };
 
 #endif
