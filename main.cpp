@@ -145,7 +145,9 @@ int main() {
         std::cout << "Ingresa el número de MEHs:" << std::endl;
         int meh = get_int(0, std::numeric_limits<int>::max());
 
-        std::cout << "Ingresa el número máximo obtenido de COMBO:" << std::endl;
+        std::cout << "Ingresa el número máximo obtenido de COMBO (Debe ser "
+                     "menor o igual al número total de notas):"
+                  << std::endl;
         int max_combo = get_int(0, great + ok + meh + miss);
 
         players[selected_player].new_standard(beatmap, star, great, ok, meh,
