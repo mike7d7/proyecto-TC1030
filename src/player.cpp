@@ -2,6 +2,8 @@
 #include "../headers/mania.hpp"
 #include "../headers/standard.hpp"
 #include "../headers/taiko.hpp"
+#include <algorithm>
+#include <cmath>
 #include <sstream>
 #include <string>
 
@@ -9,7 +11,13 @@ std::stringstream Player::show_stats() {
   std::stringstream ss;
   ss << "Nombre: " << name << std::endl;
 
-  total_score = calc_performance_point();
+  performance_points = calc_performance_point();
+  ss << "Puntos de rendimiento: " << performance_points << std::endl;
+
+  total_score = 0;
+  for (auto i : plays) {
+    total_score += i->get_score();
+  }
   ss << "Puntaje total: " << total_score << std::endl;
   return ss;
 }
@@ -25,8 +33,20 @@ std::stringstream Player::show_plays() {
 }
 
 int Player::calc_performance_point() {
+  for (auto i : plays) {
+    i->play();
+  }
+  std::sort(plays.begin(), plays.end(), [](Gamematch *a, Gamematch *b) {
+    return a->get_performance_points() > b->get_performance_points();
+  });
+
   // Total pp = p * 0.95^(n-1)
-  return 10;
+  int pp = 0;
+  for (int i = 0; i < plays.size(); i++) {
+    pp += plays[i]->get_performance_points() * std::pow(0.95, i);
+  }
+
+  return pp;
 }
 
 void Player::new_standard(std::string bm, double star, int great, int ok,
