@@ -36,6 +36,7 @@ int Player::calc_performance_point() {
   for (auto i : plays) {
     i->play();
   }
+  // https://stackoverflow.com/questions/1380463/how-do-i-sort-a-vector-of-custom-objects
   std::sort(plays.begin(), plays.end(), [](Gamematch *a, Gamematch *b) {
     return a->get_performance_points() > b->get_performance_points();
   });
