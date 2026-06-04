@@ -20,6 +20,7 @@ class Gamematch {
     +play()* virtual
     +show_results()* string virtual
     +get_performance_points() int
+    +get_score() int
 }
 
 class Standard {
