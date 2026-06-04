@@ -34,6 +34,7 @@ public:
   virtual void play() = 0;
   virtual std::stringstream show_results() = 0;
   int get_performance_points();
+  int get_score();
 };
 
 #endif
