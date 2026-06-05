@@ -6,6 +6,10 @@
 #include <string>
 #include <vector>
 
+#if defined(_WIN32) || defined(_WIN64)
+#include <windows.h>
+#endif
+
 // Detiene la ejecución hasta que el usuario presiona la tecla "enter".
 void enter_to_continue() {
   std::cout << "Presiona enter para continuar" << std::endl;
@@ -79,6 +83,9 @@ void print_players(std::vector<Player> players) {
 }
 
 int main() {
+#if defined(_WIN32) || defined(_WIN64)
+  SetConsoleOutputCP(CP_UTF8);
+#endif
   std::vector<Player> players;
 
   while (true) {
