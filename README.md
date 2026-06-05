@@ -30,7 +30,7 @@ Ejecución: `./osu-sim`
 ### Windows
 
 Compilación:
-`g++ -std=c++11 main.cpp "src/standard.cpp" "src/mania.cpp" "src/taiko.cpp" "src/player.cpp" "src/gamematch.cpp" -o osu-sim`
+`g++ -std=c++11 main.cpp "src/standard.cpp" "src/mania.cpp" "src/taiko.cpp" "src/player.cpp" "src/gamematch.cpp" -o osu-sim.exe`
 
 Ejecución: `.\osu-sim.exe`
 
