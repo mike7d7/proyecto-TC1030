@@ -1,5 +1,5 @@
 {
-  description = "Simulador de Banco";
+  description = "Simulador de osu!";
 
   # inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.*.tar.gz";
   inputs.nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
