@@ -24,6 +24,7 @@ Este programa ha sido probado con `GCC 15.3.0`, otros compiladores pueden funcio
 
 Compilación:
 `g++ -std=c++11 main.cpp "src/standard.cpp" "src/mania.cpp" "src/taiko.cpp" "src/player.cpp" "src/gamematch.cpp" -o osu-sim`
+
 Ejecución: `./osu-sim`
 
 ### Windows
