@@ -109,7 +109,8 @@ int main() {
       }
       print_players(players);
       std::cout << "Ingresa el número del jugador correspondiente a la nueva "
-                   "partida: ";
+                   "partida: "
+                << std::endl;
 
       std::cin.ignore();
       int selected_player = get_int(1, players.size()) - 1;
@@ -120,7 +121,8 @@ int main() {
       std::cout << "1.- Standard" << std::endl;
       std::cout << "2.- Mania" << std::endl;
       std::cout << "3.- Taiko" << std::endl;
-      std::cout << "Ingresa el número del modo de juego de la partida: ";
+      std::cout << "Ingresa el número del modo de juego de la partida: "
+                << std::endl;
       int selected_mode = get_int(1, 3);
 
       std::cout << "Ingresa el nombre de la canción:" << std::endl;
