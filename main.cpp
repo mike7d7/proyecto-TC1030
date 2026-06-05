@@ -89,6 +89,7 @@ int main() {
     switch (option) {
     // Add player
     case 1: {
+      clear();
       std::string username;
       std::cout << "Ingresa el nombre de usuario." << std::endl;
       std::cin.ignore();
@@ -187,6 +188,7 @@ int main() {
     }
     // Show stats
     case 3: {
+      clear();
       // Player select
       if (players.size() == 0) {
         std::cout << "Primero registre un jugador." << std::endl;
