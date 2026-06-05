@@ -130,12 +130,12 @@ int main() {
       std::cin.ignore();
       getline(std::cin, beatmap);
 
-      std::cout << "Ingresa la dificultad en estrellas (0.0 - 15.0):"
+      std::cout << "Ingresa la dificultad en estrellas (1.0 - 15.0):"
                 << std::endl;
-      double star = get_double(0.0, 15.0);
+      double star = get_double(1.0, 15.0);
 
-      std::cout << "Ingresa el número de GREATs:" << std::endl;
-      int great = get_int(0, std::numeric_limits<int>::max());
+      std::cout << "Ingresa el número de GREATs (mínimo 1):" << std::endl;
+      int great = get_int(1, std::numeric_limits<int>::max());
 
       std::cout << "Ingresa el número de OKs:" << std::endl;
       int ok = get_int(0, std::numeric_limits<int>::max());
