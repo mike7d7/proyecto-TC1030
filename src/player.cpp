@@ -7,6 +7,7 @@
 #include <sstream>
 #include <string>
 
+// Regresa stringstream con estadísticas del jugador para mostrarlas en output
 std::stringstream Player::show_stats() {
   std::stringstream ss;
   ss << "Nombre: " << name << std::endl;
@@ -22,6 +23,7 @@ std::stringstream Player::show_stats() {
   return ss;
 }
 
+// Regresa stringstream con la info de cada partida del jugador
 std::stringstream Player::show_plays() {
   std::stringstream ss;
   for (auto i : plays) {
@@ -32,6 +34,10 @@ std::stringstream Player::show_plays() {
   return ss;
 }
 
+// Calcula los puntos de rendimiento de cada partida individual y usa la fórmula
+// de ponderación para obtener los puntos de rendimiento del jugador
+// Regresa:
+//      Puntos de rendimiento de jugador
 int Player::calc_performance_point() {
   for (auto i : plays) {
     i->play();
@@ -50,12 +56,35 @@ int Player::calc_performance_point() {
   return pp;
 }
 
+// Pasa parámetros al constructor para crear nueva partida (tipo standard) y
+// agregarla al vector
+// Recibe:
+//      Nombre del mapa
+//      Dificultad en estrellas
+//      Cantidad de notas con precisión great
+//      Cantidad de notas con precisión ok
+//      Cantidad de notas con precisión meh
+//      Cantidad de notas falladas
+//      Combo máximo
 void Player::new_standard(std::string bm, double star, int great, int ok,
                           int meh, int miss, int max_combo) {
   Gamematch *match = new Standard(bm, star, great, ok, meh, miss, max_combo);
   plays.push_back(match);
 };
 
+// Pasa parámetros al constructor para crear nueva partida (tipo mania) y
+// agregarla al vector
+// Recibe:
+//      Nombre del mapa
+//      Dificultad en estrellas
+//      Cantidad de notas con precisión great
+//      Cantidad de notas con precisión ok
+//      Cantidad de notas con precisión meh
+//      Cantidad de notas falladas
+//      Combo máximo
+//      Número de teclas (4-7) con las que se juega el mapa
+//      Cantidad de notas con precisión perfect
+//      Cantidad de notas con precisión good
 void Player::new_mania(std::string bm, double star, int great, int ok, int meh,
                        int miss, int max_combo, int num_keys, int perfect,
                        int good) {
@@ -64,10 +93,20 @@ void Player::new_mania(std::string bm, double star, int great, int ok, int meh,
   plays.push_back(match);
 };
 
+// Pasa parámetros al constructor para crear nueva partida (tipo taiko) y
+// agregarla al vector
+// Recibe:
+//      Nombre del mapa
+//      Dificultad en estrellas
+//      Cantidad de notas con precisión great
+//      Cantidad de notas con precisión ok
+//      Cantidad de notas falladas
+//      Combo máximo
 void Player::new_taiko(std::string bm, double star, int great, int ok, int miss,
                        int max_combo) {
   Gamematch *match = new Taiko(bm, star, great, ok, miss, max_combo);
   plays.push_back(match);
 };
 
+// Getter
 std::string Player::get_name() { return name; }

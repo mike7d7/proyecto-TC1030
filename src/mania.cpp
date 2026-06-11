@@ -1,9 +1,14 @@
 #include "../headers/mania.hpp"
 #include <cmath>
 
+// Getters y setters
 int Mania::get_num_keys() { return num_keys; }
 void Mania::set_num_keys(int num) { num_keys = num; }
 
+// Caclular el accuracy de la partida utilizando las distintas precisiones.
+// Usar play() antes de este método.
+// Regresa:
+//      La precisión (accuracy) de la partida
 double Mania::calc_accuracy() {
   // https://osu.ppy.sh/wiki/en/Gameplay/Accuracy#osu%21mania (v2)
   int perfect_score = 305 * num_notes;
@@ -12,6 +17,8 @@ double Mania::calc_accuracy() {
   double acc = (double)real / perfect_score;
   return acc;
 }
+
+// Simular el juego de una partida
 void Mania::play() {
   num_notes = perfect + great + good + ok + meh + miss;
 
@@ -19,13 +26,23 @@ void Mania::play() {
   score = calc_score();
   performance_points = calc_performance();
 };
-int Mania::calc_score() {
 
+// Calcular la puntuación (normalizada a max. 1000000).
+// Usar play() y calc_accuracy() antes de este método.
+// Regresa:
+//      La puntuación de la partida
+int Mania::calc_score() {
+  // Importancia del combo en la puntuación
   double combo_factor = log(1.0 + max_combo) / log(1.0 + num_notes);
 
   int score = 1000000 * (0.3 * pow(accuracy, 5) + 0.7 * combo_factor);
   return score;
 };
+
+// Calcular los puntos de rendimiento.
+// Usar play() y calc_accuracy() antes de este método.
+// Regresa:
+//      Los puntos de rendimiento de la partida
 int Mania::calc_performance() {
   int perf = 1000 * std::pow(star_rating / 10, 1.6) *
              (0.65 * std::pow(accuracy, 5.5) +
@@ -34,6 +51,7 @@ int Mania::calc_performance() {
   return perf;
 };
 
+// Regresa stringstream con los datos importantes para mostrarlos después.
 std::stringstream Mania::show_results() {
   std::stringstream ss;
   ss << "█████ " << beatmap << " █████" << std::endl;

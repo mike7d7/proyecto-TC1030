@@ -1,6 +1,7 @@
 #include "../headers/standard.hpp"
 #include <cmath>
 
+// Simular el juego de una partida
 void Standard::play() {
   num_notes = great + ok + meh + miss;
 
@@ -9,6 +10,10 @@ void Standard::play() {
   performance_points = calc_performance();
 }
 
+// Calcular la puntuación (normalizada a max. 1000000).
+// Usar play() y calc_accuracy() antes de este método.
+// Regresa:
+//      La puntuación de la partida
 int Standard::calc_score() {
   int max = num_notes * 300;
   double current = (great * 300) + (ok * 100) + (meh * 50);
@@ -19,6 +24,10 @@ int Standard::calc_score() {
   return final_val;
 };
 
+// Calcular los puntos de rendimiento.
+// Usar play() y calc_accuracy() antes de este método.
+// Regresa:
+//      Los puntos de rendimiento de la partida
 int Standard::calc_performance() {
   int perf = 25 * std::pow(star_rating - 1.8, 2) *
              std::pow(accuracy / 0.98, 6) *
@@ -26,6 +35,10 @@ int Standard::calc_performance() {
   return perf;
 };
 
+// Caclular el accuracy de la partida utilizando las distintas precisiones.
+// Usar play() antes de este método.
+// Regresa:
+//      La precisión (accuracy) de la partida
 double Standard::calc_accuracy() {
   double total = 0.0;
   // https://osu.ppy.sh/wiki/en/Gameplay/Judgement/osu%21
@@ -34,6 +47,7 @@ double Standard::calc_accuracy() {
   return acc;
 }
 
+// Regresa stringstream con los datos importantes para mostrarlos después.
 std::stringstream Standard::show_results() {
   std::stringstream ss;
   ss << "█████ " << beatmap << " █████" << std::endl;
