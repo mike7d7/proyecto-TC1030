@@ -24,6 +24,7 @@ void clear() {
   }
 }
 
+// Muestra el menú principal del programa
 void main_menu() {
   clear();
   std::cout << "Ingresa una opción" << std::endl;
@@ -76,6 +77,7 @@ double get_double(double min_val, double max_val) {
   return number;
 }
 
+// Muestra el nombre de todos los jugadores actuales.
 void print_players(std::vector<Player> players) {
   for (int i = 0; i < players.size(); i++) {
     std::cout << (i + 1) << ".- " << players[i].get_name() << std::endl;
@@ -83,9 +85,11 @@ void print_players(std::vector<Player> players) {
 }
 
 int main() {
+  // Defina formato UTF-8 para la consola de windows
 #if defined(_WIN32) || defined(_WIN64)
   SetConsoleOutputCP(CP_UTF8);
 #endif
+
   std::vector<Player> players;
 
   while (true) {
@@ -93,6 +97,7 @@ int main() {
 
     int option = get_int(1, 4);
 
+    // Switch del menú principal
     switch (option) {
     // Add player
     case 1: {
@@ -132,6 +137,7 @@ int main() {
                 << std::endl;
       int selected_mode = get_int(1, 3);
 
+      // Inputs para agregar partida (compartidos entre modos)
       std::cout << "Ingresa el nombre de la canción:" << std::endl;
       std::string beatmap;
       std::cin.ignore();
@@ -150,7 +156,9 @@ int main() {
       std::cout << "Ingresa el número de MISS:" << std::endl;
       int miss = get_int(0, std::numeric_limits<int>::max());
 
+      // Inputs para agregar partida (específicos del modo)
       switch (selected_mode) {
+        // Standard
       case 1: {
         std::cout << "Ingresa el número de MEHs:" << std::endl;
         int meh = get_int(0, std::numeric_limits<int>::max());
@@ -164,6 +172,7 @@ int main() {
                                               miss, max_combo);
         break;
       }
+        // Mania
       case 2: {
         std::cout << "Ingresa el número de MEHs:" << std::endl;
         int meh = get_int(0, std::numeric_limits<int>::max());
@@ -184,6 +193,7 @@ int main() {
                                            max_combo, num_keys, perfect, good);
         break;
       }
+        // Taiko
       case 3:
         std::cout << "Ingresa el número máximo obtenido de COMBO:" << std::endl;
         int max_combo = get_int(0, great + ok + miss);
