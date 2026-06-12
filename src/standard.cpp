@@ -18,9 +18,9 @@ int Standard::calc_score() {
 // Regresa:
 //      Los puntos de rendimiento de la partida
 int Standard::calc_performance() {
-  int perf = 25 * std::pow(star_rating - 1.8, 2) *
-             std::pow(accuracy / 0.98, 6) *
-             std::pow(max_combo / num_notes, 0.8) * std::pow(0.97, miss);
+  int perf =
+      25 * std::pow(star_rating - 1.8, 2) * std::pow(accuracy / 0.98, 6) *
+      std::pow((double)max_combo / num_notes, 0.8) * std::pow(0.97, miss);
   return perf;
 };
 
