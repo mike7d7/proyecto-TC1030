@@ -2,11 +2,12 @@ classDiagram
     note "Gamematch es clase abstracta"
 class Gamematch {
     #string beatmap
+    #int num_notes
+    #double star_rating
+
     #int score
     #int performance_points
     #double accuracy
-    #int num_notes
-    #double star_rating
 
     #int great
     #int ok
@@ -36,11 +37,14 @@ class Mania {
     -int perfect
     -int good
 
+    +get_num_keys() int
+    +set_num_keys(int num)
     +play()
     +show_results() string
     -calc_score() int
     -calc_performance() int
     -calc_accuracy() double
+    
 
 }
 
@@ -57,10 +61,11 @@ class Player {
     -string name
     -int total_score
     -int performance_points
-    -vector~Gamematch~ plays
+    -vector~Gamematch *~ plays
     -calc_performance_point() int
 
     +Player()
+    +Player(string name)
     +show_stats() string
     +show_plays() string
     +new_standard(string bm, double star, int great, int ok, int meh, int miss, int max_combo) void
