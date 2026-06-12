@@ -1,17 +1,7 @@
 #include "../headers/standard.hpp"
 #include <cmath>
 
-// Simular el juego de una partida
-void Standard::play() {
-  num_notes = great + ok + meh + miss;
-
-  accuracy = calc_accuracy();
-  score = calc_score();
-  performance_points = calc_performance();
-}
-
 // Calcular la puntuación (normalizada a max. 1000000).
-// Usar play() y calc_accuracy() antes de este método.
 // Regresa:
 //      La puntuación de la partida
 int Standard::calc_score() {
@@ -25,7 +15,6 @@ int Standard::calc_score() {
 };
 
 // Calcular los puntos de rendimiento.
-// Usar play() y calc_accuracy() antes de este método.
 // Regresa:
 //      Los puntos de rendimiento de la partida
 int Standard::calc_performance() {
@@ -36,7 +25,6 @@ int Standard::calc_performance() {
 };
 
 // Caclular el accuracy de la partida utilizando las distintas precisiones.
-// Usar play() antes de este método.
 // Regresa:
 //      La precisión (accuracy) de la partida
 double Standard::calc_accuracy() {
@@ -45,6 +33,17 @@ double Standard::calc_accuracy() {
   total += (great * 100) + (ok * 33.33) + (meh * 16.67);
   double acc = total / (num_notes * 100);
   return acc;
+}
+
+// Simular el juego de una partida.
+// Utiliza las 3 funciones de calc_*() en un orden específico para evitar
+// errores.
+void Standard::play() {
+  num_notes = great + ok + meh + miss;
+
+  accuracy = calc_accuracy();
+  score = calc_score();
+  performance_points = calc_performance();
 }
 
 // Regresa stringstream con los datos importantes para mostrarlos después.

@@ -6,7 +6,6 @@ int Mania::get_num_keys() { return num_keys; }
 void Mania::set_num_keys(int num) { num_keys = num; }
 
 // Caclular el accuracy de la partida utilizando las distintas precisiones.
-// Usar play() antes de este método.
 // Regresa:
 //      La precisión (accuracy) de la partida
 double Mania::calc_accuracy() {
@@ -18,17 +17,7 @@ double Mania::calc_accuracy() {
   return acc;
 }
 
-// Simular el juego de una partida
-void Mania::play() {
-  num_notes = perfect + great + good + ok + meh + miss;
-
-  accuracy = calc_accuracy();
-  score = calc_score();
-  performance_points = calc_performance();
-};
-
 // Calcular la puntuación (normalizada a max. 1000000).
-// Usar play() y calc_accuracy() antes de este método.
 // Regresa:
 //      La puntuación de la partida
 int Mania::calc_score() {
@@ -40,7 +29,6 @@ int Mania::calc_score() {
 };
 
 // Calcular los puntos de rendimiento.
-// Usar play() y calc_accuracy() antes de este método.
 // Regresa:
 //      Los puntos de rendimiento de la partida
 int Mania::calc_performance() {
@@ -49,6 +37,17 @@ int Mania::calc_performance() {
               0.35 * std::pow((double)max_combo / num_notes, 0.3)) *
              (1 + 0.08 * ((num_keys - 4) / 4.0));
   return perf;
+};
+
+// Simular el juego de una partida
+// Utiliza las 3 funciones de calc_*() en un orden específico para evitar
+// errores.
+void Mania::play() {
+  num_notes = perfect + great + good + ok + meh + miss;
+
+  accuracy = calc_accuracy();
+  score = calc_score();
+  performance_points = calc_performance();
 };
 
 // Regresa stringstream con los datos importantes para mostrarlos después.
